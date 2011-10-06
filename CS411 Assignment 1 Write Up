@@ -1,0 +1,37 @@
+/*==================================================================
+ *	   Nick Alto - CS 411 - Individual Assignment 1 Write Up
+ *==================================================================/
+
+---------------------------------------------------------------------
+|	  X		|	Threads		|  Time w/ Printing | Time w/o Printing |
+---------------------------------------------------------------------			
+|	10		|		4		|		 .002218	|		  .001397 	|
+|	100		|		4		|		 .035022	|		  .008948	|
+|	500		|		4		|	    6.736915	|		 1.147116	|
+|	1000	|		4		|	   36.759272	|		 9.568826	|
+|___________|_______________|___________________|___________________|
+|			|				|					|		  			|
+|	10		|		8		|		 .002391	|		  .002570	|
+|	100		|		8		|		 .033861	|		  .010115	|
+|	500		|		8		|		7.218309	|		 1.139428	|
+|	1000	|		8		|	   37.044196	|		 9.132657	|
+|___________|_______________|___________________|___________________|
+|			|				|		 			|					|
+|	10		|		16		|		 .003181	|		  .002903	|
+|	100		|		16		|		 .046317	|		  .010743	|
+|	500		|		16		|		6.988762	|		 1.149914	|
+|	1000	|		16		|	   36.652763	|		 9.558672	|
+|___________|_______________|___________________|___________________|
+
+By reviewing the collected data, it is safe to say that the execution
+times without printing were significantly faster than those that did
+include printing. Matrix multiplication is fairly easy to implement
+using multiple threads, because most of the calculations are 
+independent of one another and can be exeucted concurrently. The 
+recorded times, without printing were all fairly close in relation
+although it is worth noting that the jump from 500 - 100 had an 
+almost 9x decrease in prefomance. Depending on the architecture
+of the machine in question the most effective number of threads
+executing will depend on how many cores there are, although 
+overall the fastest execution times all around were from only 4 
+threads executing concurrently. 
